@@ -1,0 +1,145 @@
+---
+import "../styles/global.css";
+
+const whatsapp = "https://wa.me/525659898908?text=" + encodeURIComponent("Hola VEIA DEV, quiero analizar y reconstruir un sitio o proceso");
+
+const procesos = [
+  {
+    numero: "01",
+    titulo: "Observamos",
+    texto: "Partimos de una referencia real: un sitio, una interfaz, un flujo o una tarea repetitiva.",
+  },
+  {
+    numero: "02",
+    titulo: "Descomponemos",
+    texto: "Identificamos estructura, decisiones, reglas, prompts y automatizaciones que hacen funcionar la experiencia.",
+  },
+  {
+    numero: "03",
+    titulo: "Reconstruimos",
+    texto: "Convertimos el análisis en una implementación funcional, documentada y adaptada a su operación.",
+  },
+];
+
+const servicios = [
+  "Reverse prompt engineering",
+  "Reconstrucción de sitios y landing pages",
+  "Automatización de procesos repetitivos",
+  "Diseño de flujos con inteligencia artificial",
+  "Sistemas internos y herramientas a medida",
+  "Documentación de prompts y procesos",
+];
+
+const aplicaciones = [
+  { etiqueta: "Sitios", titulo: "¿Vio una experiencia que quiere replicar?", texto: "Analizamos su arquitectura, interacción y contenido para crear una versión propia, no una copia ciega." },
+  { etiqueta: "Procesos", titulo: "¿Hay tareas que su equipo repite todos los días?", texto: "Mapeamos el flujo y buscamos qué partes pueden automatizarse con IA, APIs y herramientas conectadas." },
+  { etiqueta: "Productos", titulo: "¿Tiene una idea difícil de explicar?", texto: "La convertimos en un prototipo claro para probarla, presentarla o llevarla a producción." },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="description" content="VEIA DEV: reverse prompt engineering, automatización de procesos y reconstrucción de experiencias digitales." />
+    <title>VEIA DEV · De una referencia a algo que funciona</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="VEIA DEV inicio">
+        <span class="brand-mark">V</span><span>VEIA <i>/ DEV</i></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#metodo">Método</a>
+        <a href="#servicios">Qué hacemos</a>
+        <a href="#contacto">Hablemos</a>
+      </nav>
+      <a class="header-cta" href={whatsapp} target="_blank" rel="noopener">Cuénteme su idea <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> VEIA / desarrollo experimental</p>
+          <h1>De una referencia<br />a algo que <em>funciona.</em></h1>
+          <p class="hero-lede">Ingeniería inversa de prompts, automatización y desarrollo de experiencias digitales para convertir ideas difíciles en sistemas claros.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href={whatsapp} target="_blank" rel="noopener">Platiquemos del proyecto <span>↗</span></a>
+            <a class="text-link" href="#metodo">Conozca el proceso <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Diagrama abstracto del proceso de ingeniería inversa">
+          <div class="visual-grid"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="visual-core"><span>REF</span><strong>→</strong><span>BUILD</span></div>
+          <div class="code-card card-top"><small>input.reference</small><b>observed_interface</b><i>+ 07 patterns found</i></div>
+          <div class="code-card card-bottom"><small>system.output</small><b>usable_automation</b><i>status: ready to test</i></div>
+        </div>
+        <div class="scroll-note"><span>↓</span> Desplácese para explorar</div>
+      </section>
+
+      <section class="intro section" id="metodo">
+        <div class="section-label"><span>01</span><span>Cómo pensamos</span></div>
+        <div class="intro-grid">
+          <h2>No se trata de copiar.<br /><em>Se trata de entender.</em></h2>
+          <div>
+            <p class="large-copy">Tomamos una referencia y la convertimos en conocimiento accionable: qué la hace funcionar, cómo se puede mejorar y qué hace falta para construir una versión propia.</p>
+            <p>El resultado puede ser un sitio similar en comportamiento, un flujo automatizado o una herramienta interna que antes solo existía como idea.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="method section section-dark">
+        <div class="section-label light"><span>02</span><span>El método VEIA DEV</span></div>
+        <div class="process-grid">
+          {procesos.map((proceso) => (
+            <article class="process-card">
+              <span class="process-number">{proceso.numero}</span>
+              <h3>{proceso.titulo}</h3>
+              <p>{proceso.texto}</p>
+              <span class="process-arrow">↗</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="services section" id="servicios">
+        <div class="section-label"><span>03</span><span>Áreas de trabajo</span></div>
+        <div class="services-heading"><h2>Ideas abstractas.<br /><em>Resultados concretos.</em></h2><p>Trabajamos entre diseño, código, prompts y automatización. Elegimos las herramientas según el problema, no al revés.</p></div>
+        <div class="service-list">
+          {servicios.map((servicio, index) => <div class="service-item"><span>0{index + 1}</span><h3>{servicio}</h3><b>↗</b></div>)}
+        </div>
+      </section>
+
+      <section class="applications section section-tint">
+        <div class="section-label"><span>04</span><span>¿Le suena familiar?</span></div>
+        <div class="application-grid">
+          {aplicaciones.map((aplicacion) => (
+            <article class="application-card">
+              <span class="pill">{aplicacion.etiqueta}</span>
+              <h3>{aplicacion.titulo}</h3>
+              <p>{aplicacion.texto}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="contact section" id="contacto">
+        <div class="contact-orb" aria-hidden="true"></div>
+        <div class="section-label light"><span>05</span><span>Siguiente paso</span></div>
+        <h2>Traiga la referencia.<br /><em>Construimos lo demás.</em></h2>
+        <p>Cuénteme qué quiere replicar, automatizar o convertir en producto. Empezamos con una conversación y un problema concreto.</p>
+        <a class="button button-light" href={whatsapp} target="_blank" rel="noopener">Iniciar conversación <span>↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© {new Date().getFullYear()} VEIA DEV</span><span>Una iniciativa de <a href="https://veia.com.mx">VEIA</a></span><a href="#inicio">Volver arriba ↑</a></footer>
+  </body>
+</html>
